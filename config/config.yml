@@ -1,0 +1,22 @@
+default:
+  icon_emoji: ':glados2:'
+  username: GladOS 2.0
+  now_message: "{text}\\n{message}"
+  prior_message: "{text} in {until_date} \\n{message}"
+birthday:
+  now_message: "{text} has a birthday today!\\n{message}"
+  prior_message: ":partyparrot: {text} has a birthday {until_date} on {event_day}"
+  icon_emoji: ':birthday:'
+work anniversary:
+  now_message: "{text} has {ordinal} work anniversary today! \\n{message}"
+  prior_message: ":partyparrot: {text} has {ordinal} work anniversary in {until_date} on {event_day} "
+template_keys:
+  ordinal: [ 'a' ,'1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th',
+             '11th', '12th', '13th', '14th', '15th', 'message from the past, are we still using slackbot?' ]
+federal holiday:
+  now_message: "{text}\\n{message}"
+  username: GladOS 2.0
+## ordinal, mm-dd , text, message , until_date, event_day
+
+webhook: CHANGE_ME
+downloadurl: CHANGE_ME

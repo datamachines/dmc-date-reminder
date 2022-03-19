@@ -64,20 +64,20 @@ for row in ss[1:]:
                 if row[n].strip() != '':
                     record[hcol] = row[n]
     if all(col in record.keys()
-           for col in ['date', 'name', 'program']):
-        rec_date_obj = datetime.strptime(record['date'], "%m-%d-%Y")
+           for col in ['submit', 'name', 'program']):
+        rec_date_obj = datetime.strptime(record['submit'], "%m-%d-%Y")
 
         if 'days prior' in record:
             days_prior = record['days prior']
         else:
             days_prior = 10
-        rec_alert_date_obj = datetime.strptime(record['date'], "%m-%d-%Y") - timedelta(days=int(days_prior))
+        rec_alert_date_obj = datetime.strptime(record['submit'], "%m-%d-%Y") - timedelta(days=int(days_prior))
 
         if 'days post' in record:
             days_post = record['days post']
         else:
             days_post = 10
-        rec_stop_date_obj  = datetime.strptime(record['date'], "%m-%d-%Y") + timedelta(days=int(days_post))
+        rec_stop_date_obj  = datetime.strptime(record['submit'], "%m-%d-%Y") + timedelta(days=int(days_post))
 
         if 'channel' in record:
             channel = record['channel']
@@ -97,7 +97,7 @@ for row in ss[1:]:
                 daystext = " -- today"
             if 'submitted on' in record:
                 daystext = ""
-            text = record['name'] + daystext + " (is due on " + record['date'] + ")"
+            text = record['name'] + daystext + " (is due on " + record['submit'] + ")"
 
         if todayObj <= rec_stop_date_obj and todayObj > rec_date_obj:
             icon = ":rotating_light:"
@@ -109,7 +109,7 @@ for row in ss[1:]:
                 daystext = " !! today"
             if 'submitted on' in record:
                 daystext = ""
-            text = record['name'] + daystext + " (was due on " + record['date'] + ")"
+            text = record['name'] + daystext + " (was due on " + record['submit'] + ")"
 
         if 'submitted on' in record:
            icon = ":white_check_mark:"
