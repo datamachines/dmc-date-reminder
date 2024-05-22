@@ -19,7 +19,9 @@ Configuration file in `~/.datereminder/config.yml`
 
 
 Note that the `downloadurl` need to be readable by anybody with the link since the script can not login as a user. It also downloads a CVS file to work from.
-
+the link can be creatd by select the google doc, File > Share > Publish to the Web ... and select csv format.
+or url = f'https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&id={sheet_id}&gid={gid}'
+where gid isually 0, sheet_id is the actual sheetId
 ## datereminder_ms.py
 
 The modified version of the tool, designed to read the "DMC-Master Deliverable Schedule" Google Sheet.
